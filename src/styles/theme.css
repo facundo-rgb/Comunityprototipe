@@ -39,6 +39,39 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ========================================
+   * COMMUNITY DESIGN TOKENS
+   * Learning Heroes Community Color Palette
+   * ======================================== */
+
+  /* Backgrounds */
+  --community-bg-primary: #182831;
+  --community-bg-secondary: #1c303b;
+  --community-bg-tertiary: #142129;
+  --community-bg-card: #243f4c;
+  --community-bg-hover: #2a4855;
+
+  /* Borders */
+  --community-border-default: #243f4c;
+  --community-border-accent: #2a5266;
+
+  /* Text */
+  --community-text-primary: #ffffff;
+  --community-text-secondary: #cfd9de;
+  --community-text-muted: #a7c1cd;
+
+  /* Accent Colors */
+  --community-accent-green: #7ee2b8;
+  --community-accent-green-dark: #4bce97;
+  --community-accent-green-bg: #1f845a;
+  --community-accent-teal: #0C9494;
+  --community-accent-blue: #579dff;
+
+  /* Typography */
+  --font-primary: 'Monument Grotesk', sans-serif;
+  --font-secondary: 'Figtree', sans-serif;
+  --font-weight-bold: 700;
 }
 
 .dark {
@@ -117,6 +150,34 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* ========================================
+   * COMMUNITY TAILWIND CLASSES
+   * Usage: bg-community-primary, text-community-muted, etc.
+   * ======================================== */
+
+  /* Background colors */
+  --color-community-primary: var(--community-bg-primary);
+  --color-community-secondary: var(--community-bg-secondary);
+  --color-community-tertiary: var(--community-bg-tertiary);
+  --color-community-card: var(--community-bg-card);
+  --color-community-hover: var(--community-bg-hover);
+
+  /* Border colors */
+  --color-community-border: var(--community-border-default);
+  --color-community-border-accent: var(--community-border-accent);
+
+  /* Text colors */
+  --color-community-text: var(--community-text-primary);
+  --color-community-text-secondary: var(--community-text-secondary);
+  --color-community-text-muted: var(--community-text-muted);
+
+  /* Accent colors */
+  --color-community-green: var(--community-accent-green);
+  --color-community-green-dark: var(--community-accent-green-dark);
+  --color-community-green-bg: var(--community-accent-green-bg);
+  --color-community-teal: var(--community-accent-teal);
+  --color-community-blue: var(--community-accent-blue);
 }
 
 @layer base {

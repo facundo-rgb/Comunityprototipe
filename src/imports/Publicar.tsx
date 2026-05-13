@@ -101,29 +101,32 @@ function Emoji() {
 
 function Footer({ isActive, onPublish, hasContent, onMediaClick }: { isActive: boolean; onPublish: () => void; hasContent: boolean; onMediaClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full mt-auto pt-[8px]" data-name="Footer">
-      <div className="content-stretch flex items-center justify-between px-[16px] relative w-full">
-        <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Footer Container">
-          <div className="flex gap-[14px] items-center">
+    <div className="relative mt-auto w-full shrink-0 border-t border-white/[0.08] pt-3" data-name="Footer">
+      <div className="flex min-h-[44px] w-full flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 sm:px-5">
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3 sm:gap-4" data-name="Footer Container">
+          <div className="flex shrink-0 items-center gap-3">
             <PhotoSmall onClick={onMediaClick} />
             <Emoji />
           </div>
-          <div className="h-[20px] w-[1px] bg-[#a7c1cd]/30" />
-          <div className="flex gap-[8px] items-center cursor-pointer group">
-            <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[20px] not-italic text-[#a7c1cd] text-[16px] tracking-[0.1px] group-hover:text-white transition-colors"># Seleccionar tema</p>
+          <div className="hidden h-5 w-px shrink-0 bg-[#a7c1cd]/30 sm:block" />
+          <div className="flex min-w-0 cursor-pointer items-center gap-2 group">
+            <p className="css-ew64yg truncate font-['Monument_Grotesk:Regular',sans-serif] text-[15px] leading-snug tracking-[0.1px] text-[#cfd9de] transition-colors group-hover:text-white">
+              # Seleccionar tema
+            </p>
           </div>
         </div>
         
         <button 
+          type="button"
           onClick={(e) => {
             e.stopPropagation();
             onPublish();
           }}
           disabled={!hasContent}
-          className={`px-[24px] py-[10px] rounded-full font-['Monument_Grotesk:Medium',sans-serif] text-[16px] tracking-[0.1px] transition-all border
+          className={`shrink-0 px-5 py-2.5 text-[15px] font-['Monument_Grotesk:Medium',sans-serif] tracking-[0.1px] transition-all border rounded-full
             ${hasContent 
-              ? 'bg-white text-[#182831] border-transparent cursor-pointer hover:bg-white/90 active:scale-95 shadow-lg' 
-              : 'bg-transparent text-[#a7c1cd] border-white/20 cursor-not-allowed hover:border-white/30'}`}
+              ? 'bg-white text-[#182831] border-transparent cursor-pointer hover:bg-white/90 active:scale-[0.98] shadow-md' 
+              : 'bg-[#1c303b] text-[#cfd9de] border-white/25 cursor-not-allowed hover:border-white/35'}`}
         >
           Publicar
         </button>

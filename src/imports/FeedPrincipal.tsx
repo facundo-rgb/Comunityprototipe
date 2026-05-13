@@ -2190,11 +2190,11 @@ function StepContentContainer() {
       <ul className="block font-['Figtree:Regular',sans-serif] font-normal relative shrink-0 text-[0px] tracking-[0.5px] w-full">
         <li className="css-4hzbpn mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
           <span className="[text-decoration-skip-ink:none] decoration-solid font-['Figtree:Regular',sans-serif] font-normal leading-[24px] text-[#579dff] tracking-[0.5px] underline">#IAHeroes</span>
-          <span className="leading-[24px]">{` : el canal donde todo Learning Heroes habla de inteligencia artificial`}</span>
+          <span className="leading-[24px]">: el espacio donde la comunidad habla de inteligencia artificial.</span>
         </li>
         <li className="css-4hzbpn ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
           <span className="[text-decoration-skip-ink:none] decoration-solid font-['Figtree:Regular',sans-serif] font-normal leading-[24px] text-[#579dff] tracking-[0.5px] underline">{`#IAHeroes14: `}</span>
-          <span className="leading-[24px]">el canal de tu promoción especifica (ESTO QUIERO EN GRUPO)</span>
+          <span className="leading-[24px]">canal de tu promoción y cohorte (grupo de formación).</span>
         </li>
       </ul>
     </div>

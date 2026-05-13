@@ -59,7 +59,9 @@ function Header({ isOpen, toggle, percentage }: { isOpen: boolean; toggle: () =>
       onClick={toggle}
     >
       <div className="content-stretch flex flex-[1_0_0] items-center justify-between min-h-px min-w-px relative" data-name="Header Container">
-        <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-white">Acciones sugeridas</p>
+        <p className="font-['Monument_Grotesk:Medium',sans-serif] text-[18px] leading-snug tracking-tight text-white">
+          Acciones sugeridas
+        </p>
         <ProgressContainer percentage={percentage} />
       </div>
       <motion.div 
@@ -118,29 +120,35 @@ export default function PanelDeAccionesSugeridas() {
 
   const steps = [
     {
-      title: "Date a conocer completando tu perfil:",
-      description: "Te guiaremos paso a paso, para lo hagas de la mejor manerae te presentes",
-      badge: "Badget de iniciación",
+      title: "Date a conocer completando tu perfil",
+      description:
+        "Te guiaremos paso a paso para que lo hagas de la mejor manera y te presentes bien a la comunidad.",
+      badge: "Badge de iniciación",
       hasTrophy: true
     },
     {
-      title: "Explora los canales fundamentales:",
+      title: "Explora los canales fundamentales",
       content: (
-        <ul className="block font-['Figtree:Regular',sans-serif] font-normal relative shrink-0 text-[0px] tracking-[0.5px] w-full mt-[6px]">
-          <li className="css-4hzbpn mb-0 ms-[1.5em] list-disc">
-            <span className="text-[#579dff] underline cursor-pointer">#IAHeroes</span>
-            <span className="leading-[24px] text-[16px] text-white"> : el canal donde todo Learning Heroes habla de inteligencia artificial</span>
+        <ul className="mt-2 space-y-2.5 pl-1 font-['Figtree:Regular',sans-serif] text-[15px] leading-relaxed tracking-[0.02em] text-[#e8eef1]">
+          <li className="list-disc pl-5 marker:text-[#7ee2b8]">
+            <span className="cursor-pointer text-[#8ec8ff] underline decoration-[#8ec8ff]/50 underline-offset-2 hover:text-white">
+              #IAHeroes
+            </span>
+            <span>: el espacio donde la comunidad habla de inteligencia artificial.</span>
           </li>
-          <li className="css-4hzbpn ms-[1.5em] list-disc">
-            <span className="text-[#579dff] underline cursor-pointer">#IAHeroes14: </span>
-            <span className="leading-[24px] text-[16px] text-white">el canal de tu promoción especifica (ESTO QUIERO EN GRUPO)</span>
+          <li className="list-disc pl-5 marker:text-[#7ee2b8]">
+            <span className="cursor-pointer text-[#8ec8ff] underline decoration-[#8ec8ff]/50 underline-offset-2 hover:text-white">
+              #IAHeroes14
+            </span>
+            <span>: canal de tu promoción y cohorte (grupo de formación).</span>
           </li>
         </ul>
       )
     },
     {
-      title: "Lee y apréndete las reglas de la comunidad",
-      description: "Lee las reglas haciendo click aqui. te haremos un breve cuestionario para evaluar si las sabes",
+      title: "Lee y aprende las reglas de la comunidad",
+      description:
+        "Lee las reglas desde aquí. Después te haremos un breve cuestionario para confirmar que las conoces.",
       badge: "#Desbloqueo especial",
       hasTrophy: false
     }
@@ -148,15 +156,9 @@ export default function PanelDeAccionesSugeridas() {
 
   const percentage = (completedSteps / steps.length) * 100;
 
-  // Toggle function for testing states
-  const cycleStates = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Don't close dropdown when cycling
-    setCompletedSteps((prev) => (prev + 1) % (steps.length + 1));
-  };
-
   return (
     <div 
-      className="bg-[#1c303b] content-stretch flex flex-col gap-[24px] items-start p-[24px] relative rounded-[8px] w-full border border-[#2a5266]" 
+      className="flex w-full flex-col items-stretch gap-5 rounded-[inherit] bg-transparent px-5 pb-6 pt-4 sm:px-7 sm:pb-7 sm:pt-5" 
       data-name="Panel de acciones sugeridas"
     >
       <Header 
@@ -165,13 +167,6 @@ export default function PanelDeAccionesSugeridas() {
         percentage={percentage} 
       />
       
-      {/* State Cycler (Hidden/Transparent for user testing) */}
-      <div 
-        className="absolute top-2 right-12 size-4 opacity-0 cursor-pointer z-50" 
-        onClick={cycleStates}
-        title="Cycle states for testing"
-      />
-
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -181,14 +176,14 @@ export default function PanelDeAccionesSugeridas() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="flex gap-[24px] pt-[24px]">
+            <div className="flex gap-6 border-t border-white/[0.08] pt-6">
               {/* Timeline */}
               <div className="flex flex-col items-center shrink-0">
                 {steps.map((_, index) => (
                   <div key={index} className="flex flex-col items-center">
                     <StepIcon completed={completedSteps > index} />
                     {index < steps.length - 1 && (
-                      <div className="h-[120px]">
+                      <div className="relative h-[88px] w-px shrink-0">
                         <TimelineLine active={completedSteps > index + 1} />
                       </div>
                     )}
@@ -197,28 +192,30 @@ export default function PanelDeAccionesSugeridas() {
               </div>
 
               {/* Steps Content */}
-              <div className="flex flex-col gap-[24px] flex-1">
+              <div className="flex min-w-0 flex-1 flex-col gap-7">
                 {steps.map((step, index) => (
-                  <div key={index} className="flex flex-col gap-[6px]">
-                    <div className="flex gap-[8px] items-start">
-                      <span className="font-['Monument_Grotesk:Medium',sans-serif] text-[16px] text-white leading-[20px]">{index + 1}.</span>
-                      <p className="font-['Monument_Grotesk:Medium',sans-serif] text-[16px] text-white leading-[20px]">
+                  <div key={index} className="flex flex-col gap-2">
+                    <div className="flex gap-2.5 items-baseline">
+                      <span className="shrink-0 font-['Monument_Grotesk:Medium',sans-serif] text-[15px] tabular-nums text-[#7ee2b8]">
+                        {index + 1}.
+                      </span>
+                      <p className="min-w-0 font-['Monument_Grotesk:Medium',sans-serif] text-[16px] leading-snug text-white">
                         {step.title}
                       </p>
                     </div>
                     
                     {step.description && (
-                      <p className="font-['Figtree:Regular',sans-serif] text-[14px] text-white/80 leading-[22px] ml-[24px]">
+                      <p className="ml-0 pl-7 font-['Figtree:Regular',sans-serif] text-[14px] leading-relaxed text-[#cfd9de] sm:text-[15px]">
                         {step.description}
                       </p>
                     )}
                     
                     {step.content && (
-                       <div className="ml-[12px]">{step.content}</div>
+                       <div className="ml-0 pl-4 sm:pl-6">{step.content}</div>
                     )}
 
                     {step.badge && (
-                      <div className="flex items-center gap-[4px] ml-[24px] mt-[4px]">
+                      <div className="mt-1 flex items-center gap-2 pl-7">
                         {step.hasTrophy && (
                           <div className="size-[16px]">
                             <svg className="block size-full" fill="none" viewBox="0 0 16 16">

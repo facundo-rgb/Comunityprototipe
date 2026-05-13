@@ -218,7 +218,7 @@ function Right() {
 
 export function NavBar() {
   return (
-    <div className="fixed content-stretch flex items-center justify-between left-0 right-0 z-50 px-[40px] py-[8px] top-0 bg-[#182831]/80 backdrop-blur-sm" data-name="NavBar">
+    <div className="fixed content-stretch flex items-center justify-between left-0 right-0 z-50 px-[40px] py-[8px] top-0 border-b border-white/[0.06] bg-[#182831]/85 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-md" data-name="NavBar">
       <Left />
       <Right />
     </div>
@@ -314,7 +314,7 @@ function SelectorDeCanales({ onSearchClick }: { onSearchClick?: () => void }) {
 
 function Frame39({ onSearchClick }: { onSearchClick?: () => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-8 items-start relative shrink-0 w-full">
       <SelectorDeCanales onSearchClick={onSearchClick} />
       <Publicar />
     </div>
@@ -796,8 +796,13 @@ function MoreHoriz() {
 
 function FollowButton() {
   return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Follow Button">
-      <p className="css-ew64yg font-['Monument_Grotesk:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-white tracking-[0.1px]">Seguir</p>
+    <div className="content-stretch flex items-center gap-2 relative shrink-0" data-name="Follow Button">
+      <button
+        type="button"
+        className="rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 font-['Monument_Grotesk:Medium',sans-serif] text-[14px] text-white tracking-[0.1px] transition-colors hover:bg-white/10 hover:border-white/30"
+      >
+        Seguir
+      </button>
       <MoreHoriz />
     </div>
   );
@@ -805,8 +810,8 @@ function FollowButton() {
 
 function Header() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Header">
-      <div className="flex flex-row items-center size-full">
+    <div className="relative w-full shrink-0" data-name="Header">
+      <div className="flex w-full flex-row items-center">
         <div className="content-stretch flex items-center justify-between pt-[32px] px-[24px] relative w-full">
           <UserInfo2 />
           <FollowButton />
@@ -818,10 +823,10 @@ function Header() {
 
 function Frame43() {
   return (
-    <div className="relative shrink-0 w-full">
-      <div className="flex flex-row items-center justify-center size-full">
+    <div className="relative w-full shrink-0">
+      <div className="flex w-full flex-row items-center justify-center">
         <div className="content-stretch flex items-center justify-center px-[24px] relative w-full">
-          <p className="css-4hzbpn flex-[1_0_0] font-['Figtree:Medium',sans-serif] font-medium leading-[26px] min-h-px min-w-px relative text-[18px] text-white tracking-[0.5px]">Hola a todos estoy muy contento de participar en esta hermosa comunidad hoy en nuestra clase de video con IA hicimos esto en #Flora</p>
+          <p className="css-4hzbpn flex-[1_0_0] font-['Figtree:Medium',sans-serif] font-medium leading-[26px] min-h-px min-w-0 relative text-[18px] text-white tracking-[0.5px]">Hola a todos estoy muy contenta de participar en esta hermosa comunidad hoy en nuestra clase de video con IA hicimos esto en #Flora</p>
         </div>
       </div>
     </div>
@@ -860,17 +865,13 @@ function CanalTag() {
 
 function Frame44() {
   return (
-    <div className="relative shrink-0 w-full">
-      <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col items-center justify-center px-[24px] relative w-full">
-          <div className="aspect-[328/184] relative rounded-[8px] shrink-0 w-full overflow-hidden" data-name="Post Image">
-            <ImageWithFallback 
-              src="https://images.unsplash.com/photo-1749006590639-e749e6b7d84c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwYWJzdHJhY3QlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2OTU5NDc5OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              className="absolute inset-0 object-cover size-full"
-              alt="Post IA"
-            />
-          </div>
-        </div>
+    <div className="w-full shrink-0 px-6">
+      <div className="relative mx-auto aspect-[328/184] w-full max-w-[640px] overflow-hidden rounded-xl ring-1 ring-white/[0.08]">
+        <ImageWithFallback
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+          className="absolute inset-0 h-full w-full object-cover"
+          alt="Post IA"
+        />
       </div>
     </div>
   );
@@ -1249,7 +1250,7 @@ function ShowMoreComments() {
     <div className="relative shrink-0 w-full" data-name="Show More Comments">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[24px] relative w-full">
-          <p className="css-4hzbpn flex-[1_0_0] font-['Figtree:Medium',sans-serif] font-medium leading-[26px] min-h-px min-w-px relative text-[18px] text-white tracking-[0.5px]">Mostrar 3 comentarios más</p>
+          <p className="css-4hzbpn flex-[1_0_0] font-['Figtree:Medium',sans-serif] font-medium leading-[26px] min-h-px min-w-px relative text-[18px] text-[#9dd0ff] tracking-[0.5px] transition-colors hover:text-[#c5e4ff] cursor-default">Mostrar 3 comentarios más</p>
         </div>
       </div>
     </div>
@@ -1263,10 +1264,9 @@ function Post({ index }: { index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.25, delay: index * 0.1 }}
-      className="content-stretch flex flex-col gap-[23px] items-start pb-[32px] relative shrink-0 w-full" 
+      className="content-stretch flex min-w-0 flex-col gap-6 items-start border-b border-white/[0.06] pb-8 pt-1 relative shrink-0 w-full last:border-b-0" 
       data-name="Post"
     >
-      <div aria-hidden="true" className="absolute border-[#243f4c] border-b border-solid inset-0 pointer-events-none" />
       <Header />
       <Frame43 />
       <CanalTag />
@@ -1311,8 +1311,13 @@ function MoreHoriz1() {
 
 function FollowButton1() {
   return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Follow Button">
-      <p className="css-ew64yg font-['Monument_Grotesk:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-white tracking-[0.1px]">Seguir</p>
+    <div className="content-stretch flex items-center gap-2 relative shrink-0" data-name="Follow Button">
+      <button
+        type="button"
+        className="rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 font-['Monument_Grotesk:Medium',sans-serif] text-[14px] text-white tracking-[0.1px] transition-colors hover:bg-white/10 hover:border-white/30"
+      >
+        Seguir
+      </button>
       <MoreHoriz1 />
     </div>
   );
@@ -1320,8 +1325,8 @@ function FollowButton1() {
 
 function Header1() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Header">
-      <div className="flex flex-row items-center size-full">
+    <div className="relative w-full shrink-0" data-name="Header">
+      <div className="flex w-full flex-row items-center">
         <div className="content-stretch flex items-center justify-between pt-[32px] px-[24px] relative w-full">
           <UserInfo4 />
           <FollowButton1 />
@@ -1333,10 +1338,10 @@ function Header1() {
 
 function Frame45() {
   return (
-    <div className="relative shrink-0 w-full">
-      <div className="flex flex-row items-center justify-center size-full">
+    <div className="relative w-full shrink-0">
+      <div className="flex w-full flex-row items-center justify-center">
         <div className="content-stretch flex items-center justify-center px-[24px] relative w-full">
-          <p className="css-4hzbpn flex-[1_0_0] font-['Figtree:Medium',sans-serif] font-medium leading-[26px] min-h-px min-w-px relative text-[18px] text-white tracking-[0.5px]">¡Hola a todos! Estoy muy feliz de compartir mi entusiasmo por haber completado el curso de IA Avanzada en esta hermosa comunidad. Hoy, en nuestra clase de video con IA, logramos crear algo increíble utilizando #Dalia. ¡Me siento inspirada y lista para seguir explorando el mundo de la inteligencia artificial junto a todos ustedes!</p>
+          <p className="css-4hzbpn flex-[1_0_0] font-['Figtree:Medium',sans-serif] font-medium leading-[26px] min-h-px min-w-0 relative text-[18px] text-white tracking-[0.5px]">¡Hola a todos! Estoy muy feliz de compartir mi entusiasmo por haber completado el curso de IA Avanzada en esta hermosa comunidad. Hoy, en nuestra clase de video con IA, logramos crear algo increíble utilizando #Dalia. ¡Me siento inspirada y lista para seguir explorando el mundo de la inteligencia artificial junto a todos ustedes!</p>
         </div>
       </div>
     </div>
@@ -1582,10 +1587,9 @@ function Post1({ index }: { index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.25, delay: index * 0.1 }}
-      className="content-stretch flex flex-col gap-[23px] items-start pb-[32px] relative shrink-0 w-full" 
+      className="content-stretch flex min-w-0 flex-col gap-6 items-start border-b border-white/[0.06] pb-8 pt-1 relative shrink-0 w-full last:border-b-0" 
       data-name="Post"
     >
-      <div aria-hidden="true" className="absolute border-[#243f4c] border-b border-solid inset-0 pointer-events-none" />
       <Header1 />
       <Frame45 />
       <CanalTag1 />
@@ -1627,8 +1631,13 @@ function MoreHoriz2() {
 
 function FollowButton2() {
   return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Follow Button">
-      <p className="css-ew64yg font-['Monument_Grotesk:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-white tracking-[0.1px]">Seguir</p>
+    <div className="content-stretch flex items-center gap-2 relative shrink-0" data-name="Follow Button">
+      <button
+        type="button"
+        className="rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 font-['Monument_Grotesk:Medium',sans-serif] text-[14px] text-white tracking-[0.1px] transition-colors hover:bg-white/10 hover:border-white/30"
+      >
+        Seguir
+      </button>
       <MoreHoriz2 />
     </div>
   );
@@ -1636,8 +1645,8 @@ function FollowButton2() {
 
 function Header2() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Header">
-      <div className="flex flex-row items-center size-full">
+    <div className="relative w-full shrink-0" data-name="Header">
+      <div className="flex w-full flex-row items-center">
         <div className="content-stretch flex items-center justify-between pt-[32px] px-[24px] relative w-full">
           <UserInfo6 />
           <FollowButton2 />
@@ -1681,17 +1690,13 @@ function CanalTag2() {
 
 function Frame47() {
   return (
-    <div className="relative shrink-0 w-full">
-      <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col items-center justify-center px-[24px] relative w-full">
-          <div className="aspect-[328/184] relative rounded-[8px] shrink-0 w-full overflow-hidden" data-name="Post Image">
-            <ImageWithFallback 
-              src="https://images.unsplash.com/photo-1761850167081-473019536383?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwZmluYW5jZSUyMHRyYWRpbmclMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzY5NjI5MzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              className="absolute inset-0 object-cover size-full"
-              alt="Finanzas IA"
-            />
-          </div>
-        </div>
+    <div className="w-full shrink-0 px-6">
+      <div className="relative mx-auto aspect-[328/184] w-full max-w-[640px] overflow-hidden rounded-xl ring-1 ring-white/[0.08]">
+        <ImageWithFallback
+          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80"
+          className="absolute inset-0 h-full w-full object-cover"
+          alt="Finanzas IA"
+        />
       </div>
     </div>
   );
@@ -1884,10 +1889,9 @@ function Post2({ index }: { index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.25, delay: index * 0.1 }}
-      className="content-stretch flex flex-col gap-[23px] items-start pb-[32px] relative shrink-0 w-full" 
+      className="content-stretch flex min-w-0 flex-col gap-6 items-start border-b border-white/[0.06] pb-8 pt-1 relative shrink-0 w-full last:border-b-0" 
       data-name="Post"
     >
-      <div aria-hidden="true" className="absolute border-[#243f4c] border-b border-solid inset-0 pointer-events-none" />
       <Header2 />
       <Frame46 />
       <CanalTag2 />
@@ -1899,22 +1903,21 @@ function Post2({ index }: { index: number }) {
 
 function Frame16() {
   return (
-    <div className="relative rounded-[16px] shrink-0 w-full">
-      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] w-full">
+    <div className="relative w-full min-w-0 shrink-0 overflow-hidden rounded-2xl bg-[#152028]/80 shadow-[0_16px_48px_rgba(0,0,0,0.35)] ring-1 ring-white/[0.07]">
+      <div className="content-stretch flex flex-col items-start relative w-full rounded-[inherit]">
         <Post index={0} />
         <Post1 index={1} />
         <Post2 index={2} />
         <Post1 index={3} />
         <Post index={4} />
       </div>
-      <div aria-hidden="true" className="absolute border border-[#243f4c] border-solid inset-0 pointer-events-none rounded-[16px]" />
     </div>
   );
 }
 
 export function Frame37({ onSearchClick }: { onSearchClick?: () => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-end relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-10 items-end relative shrink-0 w-full">
       <Frame39 onSearchClick={onSearchClick} />
       <CarroucelDeCanalesSugeridos />
       <Frame16 />
@@ -2187,11 +2190,11 @@ function StepContentContainer() {
       <ul className="block font-['Figtree:Regular',sans-serif] font-normal relative shrink-0 text-[0px] tracking-[0.5px] w-full">
         <li className="css-4hzbpn mb-0 ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
           <span className="[text-decoration-skip-ink:none] decoration-solid font-['Figtree:Regular',sans-serif] font-normal leading-[24px] text-[#579dff] tracking-[0.5px] underline">#IAHeroes</span>
-          <span className="leading-[24px]">{` : el canal donde todo Learning Heroes habla de inteligencia artificial`}</span>
+          <span className="leading-[24px]">: el espacio donde la comunidad habla de inteligencia artificial.</span>
         </li>
         <li className="css-4hzbpn ms-[calc(var(--list-marker-font-size,0)*1.5*1)]">
           <span className="[text-decoration-skip-ink:none] decoration-solid font-['Figtree:Regular',sans-serif] font-normal leading-[24px] text-[#579dff] tracking-[0.5px] underline">{`#IAHeroes14: `}</span>
-          <span className="leading-[24px]">el canal de tu promoción especifica (ESTO QUIERO EN GRUPO)</span>
+          <span className="leading-[24px]">canal de tu promoción y cohorte (grupo de formación).</span>
         </li>
       </ul>
     </div>
@@ -2282,8 +2285,8 @@ function Divider() {
 
 function PanelDeAccionesSugeridas() {
   return (
-    <div className="bg-[#1c303b] relative rounded-[8px] shrink-0 w-full" data-name="Panel de acciones sugeridas">
-      <div aria-hidden="true" className="absolute border border-[#2a5266] border-solid inset-0 pointer-events-none rounded-[8px]" />
+    <div className="bg-[#1c303b] relative rounded-xl shrink-0 w-full shadow-[0_10px_36px_rgba(0,0,0,0.22)] ring-1 ring-white/[0.06]" data-name="Panel de acciones sugeridas">
+      <div aria-hidden="true" className="absolute border border-[#2a5266]/60 border-solid inset-0 pointer-events-none rounded-xl" />
       <AccionesSugeridasPanel />
     </div>
   );
@@ -2292,7 +2295,7 @@ function PanelDeAccionesSugeridas() {
 function Header4() {
   return (
     <div className="content-stretch flex items-start justify-between leading-[20px] not-italic relative shrink-0 text-[#a7c1cd] text-[16px] tracking-[0.1px] w-full" data-name="Header">
-      <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] relative shrink-0">challenges</p>
+      <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] relative shrink-0 tracking-wide text-[#a7c1cd] uppercase text-[13px]">Retos</p>
       <p className="css-ew64yg font-['Monument_Grotesk:Bold',sans-serif] relative shrink-0">Ver todos</p>
     </div>
   );
@@ -2327,7 +2330,9 @@ function Container16() {
   return (
     <div className="content-stretch flex flex-col gap-[15px] items-start relative shrink-0 w-full" data-name="Container">
       <Header4 />
-      <p className="css-4hzbpn font-['Monument_Grotesk:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-white w-full">{` # NANO BANANA VIDEO CHALLENGE`}</p>
+      <p className="css-4hzbpn font-['Monument_Grotesk:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[20px] text-white w-full">
+        # NANO BANANA VIDEO CHALLENGE
+      </p>
       <InfoSection />
     </div>
   );
@@ -2335,8 +2340,8 @@ function Container16() {
 
 function Eventos() {
   return (
-    <div className="content-stretch flex flex-col items-start p-[16px] relative rounded-[8px] shrink-0 w-full" data-name="Eventos">
-      <div aria-hidden="true" className="absolute border border-[#2a5266] border-solid inset-0 pointer-events-none rounded-[8px]" />
+    <div className="content-stretch flex flex-col items-start p-[16px] relative rounded-xl shrink-0 w-full shadow-[0_10px_36px_rgba(0,0,0,0.22)] ring-1 ring-white/[0.06] bg-[#1c303b]/80" data-name="Eventos">
+      <div aria-hidden="true" className="absolute border border-[#2a5266]/60 border-solid inset-0 pointer-events-none rounded-xl" />
       <Container16 />
     </div>
   );
@@ -2344,7 +2349,7 @@ function Eventos() {
 
 export function Frame40() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-end relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-6 items-end relative shrink-0 w-full">
       <Frame42 />
       <PanelDeAccionesSugeridas />
       <Eventos />

@@ -38,8 +38,8 @@ function SearchContainer() {
 
 function HeaderContainer() {
   return (
-    <div className="sticky top-0 z-20 bg-[#182831] w-full pt-6 pb-4" data-name="Sticky Header Wrapper">
-      <div className="bg-[#142129] content-stretch flex flex-col items-start relative rounded-[8px] shrink-0 w-full" data-name="Header Container">
+    <div className="sticky top-0 z-20 bg-[#182831]/95 backdrop-blur-sm w-full pt-6 pb-4" data-name="Sticky Header Wrapper">
+      <div className="bg-[#142129] content-stretch flex flex-col items-start relative rounded-xl shrink-0 w-full ring-1 ring-white/[0.06]" data-name="Header Container">
         <SearchContainer />
       </div>
     </div>
@@ -64,7 +64,7 @@ function GeneralChannelsDescription() {
 
 function GeneralChannelsHeader() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="General Channels Header">
+    <div className="content-stretch flex flex-col gap-2 sm:gap-3 items-start relative shrink-0 w-full" data-name="General Channels Header">
       <GeneralChannelsTitle />
       <GeneralChannelsDescription />
     </div>
@@ -102,7 +102,7 @@ function GeneralChannelIcon() {
 
 function GeneralChannelItem() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="General Channel Item">
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 rounded-lg px-2 py-1.5 -mx-2 transition-colors hover:bg-white/[0.06]" data-name="General Channel Item">
       <GeneralChannelIcon />
       <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px]">Café Learning Heroes</p>
     </div>
@@ -132,7 +132,7 @@ function GeneralChannelIcon1() {
 
 function GeneralChannelItem1() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="General Channel Item">
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 rounded-lg px-2 py-1.5 -mx-2 transition-colors hover:bg-white/[0.06]" data-name="General Channel Item">
       <GeneralChannelIcon1 />
       <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px]">Ideas y feedback para la plataforma</p>
     </div>
@@ -174,7 +174,7 @@ function AiChannelsDescription() {
 
 function AiChannelsHeader() {
   return (
-    <div className="content-stretch flex gap-[16px] items-start relative shrink-0 w-full" data-name="AI Channels Header">
+    <div className="content-stretch flex flex-col gap-2 sm:gap-3 items-start relative shrink-0 w-full" data-name="AI Channels Header">
       <AiChannelsTitle />
       <AiChannelsDescription />
     </div>
@@ -191,7 +191,7 @@ function Component1() {
 
 function AiChannelItem() {
   return (
-    <div className="content-stretch flex gap-[4px] items-center leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px]" data-name="AI Channel Item">
+    <div className="content-stretch flex gap-[4px] items-center leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px] rounded-lg px-2 py-1.5 -mx-2 transition-colors hover:bg-white/[0.06]" data-name="AI Channel Item">
       <p className="css-ew64yg font-['Monument_Grotesk:Medium',sans-serif] relative shrink-0">#</p>
       <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] relative shrink-0">Café Inteligencia Artificial</p>
     </div>
@@ -200,7 +200,7 @@ function AiChannelItem() {
 
 function AiChannelItem1() {
   return (
-    <div className="content-stretch flex gap-[4px] items-center leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px]" data-name="AI Channel Item">
+    <div className="content-stretch flex gap-[4px] items-center leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px] rounded-lg px-2 py-1.5 -mx-2 transition-colors hover:bg-white/[0.06]" data-name="AI Channel Item">
       <p className="css-ew64yg font-['Monument_Grotesk:Medium',sans-serif] relative shrink-0">#</p>
       <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] relative shrink-0">IAHeroes14</p>
     </div>
@@ -209,7 +209,7 @@ function AiChannelItem1() {
 
 function AiChannelItem2() {
   return (
-    <div className="content-stretch flex gap-[4px] items-center leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px]" data-name="AI Channel Item">
+    <div className="content-stretch flex gap-[4px] items-center leading-[24px] not-italic relative shrink-0 text-[#cfd9de] text-[20px] rounded-lg px-2 py-1.5 -mx-2 transition-colors hover:bg-white/[0.06]" data-name="AI Channel Item">
       <p className="css-ew64yg font-['Monument_Grotesk:Medium',sans-serif] relative shrink-0">#</p>
       <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] relative shrink-0">Ayuda</p>
     </div>

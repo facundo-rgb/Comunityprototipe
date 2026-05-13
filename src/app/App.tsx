@@ -6,23 +6,22 @@ export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <div className="bg-[#182831] min-h-screen text-white font-['Monument_Grotesk',sans-serif]">
-      {/* Fixed Navbar */}
+    <div className="relative min-h-screen overflow-x-hidden bg-[#182831] text-white font-['Monument_Grotesk',sans-serif]">
+      <div
+        className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_-8%,rgba(12,148,148,0.14),transparent_52%),radial-gradient(ellipse_55%_45%_at_100%_35%,rgba(126,226,184,0.07),transparent_48%)]"
+        aria-hidden
+      />
       <NavBar />
 
-      {/* Main Content Area */}
-      <main className="pt-[120px] pb-20">
-        <div className="mx-[10vw]">
-          {/* Two Column Layout: 60% / 40% with 40px gap */}
-          <div className="grid grid-cols-[60fr_40fr] gap-[40px] items-start">
+      <main className="relative pt-[120px] pb-20">
+        <div className="mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 gap-10 xl:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.75fr)] xl:gap-12 items-start">
             
-            {/* Left Column (60%) */}
-            <div className="min-w-0 flex flex-col gap-[40px]">
+            <div className="min-w-0 flex flex-col gap-12">
               <Frame37 onSearchClick={() => setIsSearchOpen(true)} />
             </div>
 
-            {/* Right Column (40%) */}
-            <div className="min-w-0 flex flex-col gap-[24px]">
+            <div className="min-w-0 flex flex-col gap-6">
               <Frame40 />
             </div>
 

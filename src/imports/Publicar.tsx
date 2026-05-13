@@ -6,7 +6,7 @@ import PublicarUploadmedia from "./PublicarUploadmedia";
 
 function UserInfo({ isActive, text, setText }: { isActive: boolean; text: string; setText: (v: string) => void }) {
   return (
-    <div className={`content-stretch flex gap-[19px] ${isActive ? 'items-start' : 'items-center'} relative shrink-0 w-full px-[16px]`} data-name="User Info">
+    <div className={`content-stretch flex gap-[19px] ${isActive ? 'items-start py-1' : 'items-center py-2'} relative shrink-0 w-full px-[16px]`} data-name="User Info">
       <div className="relative shrink-0 size-[40px]">
         <img alt="" className="block max-w-none size-full rounded-full" height="40" src={imgEllipse1} width="40" />
       </div>
@@ -27,7 +27,7 @@ function UserInfo({ isActive, text, setText }: { isActive: boolean; text: string
           />
         ) : (
           <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#a7c1cd] text-[20px] truncate">
-            ¿En que estas trabajando, Gustavo?
+            ¿En qué estás trabajando, Gustavo?
           </p>
         )}
       </div>
@@ -50,7 +50,7 @@ function PhotoLarge() {
 function MediaUploadPlaceholder({ onClick }: { onClick: () => void }) {
   return (
     <div 
-      className="bg-[#1c303b] h-[144px] relative rounded-[8px] shrink-0 w-full group cursor-pointer hover:bg-[#213744] transition-colors" 
+      className="bg-[#1a2e38]/90 h-[144px] relative rounded-xl shrink-0 w-full group cursor-pointer transition-all hover:bg-[#213744] hover:ring-1 hover:ring-[#579dff]/25" 
       data-name="Content Container"
       onClick={(e) => {
         e.stopPropagation();
@@ -67,7 +67,7 @@ function MediaUploadPlaceholder({ onClick }: { onClick: () => void }) {
           <span className="decoration-solid underline group-hover:text-white">explora en tu ordenador</span>
         </p>
       </div>
-      <div aria-hidden="true" className="absolute border border-[#243f4c] border-solid inset-0 pointer-events-none rounded-[8px]" />
+      <div aria-hidden="true" className="absolute border border-white/[0.08] border-solid inset-0 pointer-events-none rounded-xl" />
     </div>
   );
 }
@@ -101,29 +101,32 @@ function Emoji() {
 
 function Footer({ isActive, onPublish, hasContent, onMediaClick }: { isActive: boolean; onPublish: () => void; hasContent: boolean; onMediaClick: () => void }) {
   return (
-    <div className="relative shrink-0 w-full mt-auto pt-[8px]" data-name="Footer">
-      <div className="content-stretch flex items-center justify-between px-[16px] relative w-full">
-        <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Footer Container">
-          <div className="flex gap-[14px] items-center">
+    <div className="relative mt-auto w-full shrink-0 border-t border-white/[0.08] pt-3" data-name="Footer">
+      <div className="flex min-h-[44px] w-full flex-row flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 sm:px-5">
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-3 sm:gap-4" data-name="Footer Container">
+          <div className="flex shrink-0 items-center gap-3">
             <PhotoSmall onClick={onMediaClick} />
             <Emoji />
           </div>
-          <div className="h-[20px] w-[1px] bg-[#a7c1cd]/30" />
-          <div className="flex gap-[8px] items-center cursor-pointer group">
-            <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[20px] not-italic text-[#a7c1cd] text-[16px] tracking-[0.1px] group-hover:text-white transition-colors"># Seleccionar tema</p>
+          <div className="hidden h-5 w-px shrink-0 bg-[#a7c1cd]/30 sm:block" />
+          <div className="flex min-w-0 cursor-pointer items-center gap-2 group">
+            <p className="css-ew64yg truncate font-['Monument_Grotesk:Regular',sans-serif] text-[15px] leading-snug tracking-[0.1px] text-[#cfd9de] transition-colors group-hover:text-white">
+              # Seleccionar tema
+            </p>
           </div>
         </div>
         
         <button 
+          type="button"
           onClick={(e) => {
             e.stopPropagation();
             onPublish();
           }}
           disabled={!hasContent}
-          className={`px-[24px] py-[10px] rounded-[8px] font-['Monument_Grotesk:Medium',sans-serif] text-[16px] tracking-[0.1px] transition-all
+          className={`shrink-0 px-5 py-2.5 text-[15px] font-['Monument_Grotesk:Medium',sans-serif] tracking-[0.1px] transition-all border rounded-full
             ${hasContent 
-              ? 'bg-white text-[#182831] cursor-pointer hover:bg-white/90 active:scale-95 shadow-lg' 
-              : 'bg-white/20 text-white/30 cursor-not-allowed'}`}
+              ? 'bg-white text-[#182831] border-transparent cursor-pointer hover:bg-white/90 active:scale-[0.98] shadow-md' 
+              : 'bg-[#1c303b] text-[#cfd9de] border-white/25 cursor-not-allowed hover:border-white/35'}`}
         >
           Publicar
         </button>
@@ -166,7 +169,7 @@ export default function Publicar() {
     <>
       <div 
         ref={containerRef}
-        className={`bg-[#243f4c] content-stretch flex flex-col gap-[16px] py-[16px] relative rounded-[16px] w-full border border-[#2a5266] transition-all duration-500 ease-[0.4, 0, 0.2, 1] ${isActive ? 'min-h-[300px]' : 'h-auto cursor-pointer hover:bg-[#2a4855]'}`} 
+        className={`bg-[#243f4c]/95 content-stretch flex flex-col gap-[16px] py-[18px] relative rounded-2xl w-full border border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.25)] transition-all duration-500 ease-[0.4, 0, 0.2, 1] ${isActive ? 'min-h-[300px]' : 'h-auto cursor-pointer hover:bg-[#2a4855] hover:border-white/[0.12]'}`} 
         data-name="Publicar"
         onClick={() => !isActive && setIsActive(true)}
       >

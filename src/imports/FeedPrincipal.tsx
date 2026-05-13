@@ -1910,7 +1910,7 @@ function Frame16() {
 
 export function Frame37({ onSearchClick }: { onSearchClick?: () => void }) {
   return (
-    <div className="content-stretch flex flex-col gap-14 items-end relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-10 items-end relative shrink-0 w-full">
       <Frame39 onSearchClick={onSearchClick} />
       <CarroucelDeCanalesSugeridos />
       <Frame16 />

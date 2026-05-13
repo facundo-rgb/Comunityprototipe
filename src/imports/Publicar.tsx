@@ -6,7 +6,7 @@ import PublicarUploadmedia from "./PublicarUploadmedia";
 
 function UserInfo({ isActive, text, setText }: { isActive: boolean; text: string; setText: (v: string) => void }) {
   return (
-    <div className={`content-stretch flex gap-[19px] ${isActive ? 'items-start' : 'items-center'} relative shrink-0 w-full px-[16px]`} data-name="User Info">
+    <div className={`content-stretch flex gap-[19px] ${isActive ? 'items-start py-1' : 'items-center py-2'} relative shrink-0 w-full px-[16px]`} data-name="User Info">
       <div className="relative shrink-0 size-[40px]">
         <img alt="" className="block max-w-none size-full rounded-full" height="40" src={imgEllipse1} width="40" />
       </div>
@@ -27,7 +27,7 @@ function UserInfo({ isActive, text, setText }: { isActive: boolean; text: string
           />
         ) : (
           <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#a7c1cd] text-[20px] truncate">
-            ¿En que estas trabajando, Gustavo?
+            ¿En qué estás trabajando, Gustavo?
           </p>
         )}
       </div>
@@ -120,10 +120,10 @@ function Footer({ isActive, onPublish, hasContent, onMediaClick }: { isActive: b
             onPublish();
           }}
           disabled={!hasContent}
-          className={`px-[24px] py-[10px] rounded-[8px] font-['Monument_Grotesk:Medium',sans-serif] text-[16px] tracking-[0.1px] transition-all
+          className={`px-[24px] py-[10px] rounded-full font-['Monument_Grotesk:Medium',sans-serif] text-[16px] tracking-[0.1px] transition-all border
             ${hasContent 
-              ? 'bg-white text-[#182831] cursor-pointer hover:bg-white/90 active:scale-95 shadow-lg' 
-              : 'bg-white/20 text-white/30 cursor-not-allowed'}`}
+              ? 'bg-white text-[#182831] border-transparent cursor-pointer hover:bg-white/90 active:scale-95 shadow-lg' 
+              : 'bg-transparent text-[#a7c1cd] border-white/20 cursor-not-allowed hover:border-white/30'}`}
         >
           Publicar
         </button>
@@ -166,7 +166,7 @@ export default function Publicar() {
     <>
       <div 
         ref={containerRef}
-        className={`bg-[#243f4c]/95 content-stretch flex flex-col gap-[16px] py-[16px] relative rounded-2xl w-full border border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.25)] transition-all duration-500 ease-[0.4, 0, 0.2, 1] ${isActive ? 'min-h-[300px]' : 'h-auto cursor-pointer hover:bg-[#2a4855] hover:border-white/[0.12]'}`} 
+        className={`bg-[#243f4c]/95 content-stretch flex flex-col gap-[16px] py-[18px] relative rounded-2xl w-full border border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.25)] transition-all duration-500 ease-[0.4, 0, 0.2, 1] ${isActive ? 'min-h-[300px]' : 'h-auto cursor-pointer hover:bg-[#2a4855] hover:border-white/[0.12]'}`} 
         data-name="Publicar"
         onClick={() => !isActive && setIsActive(true)}
       >

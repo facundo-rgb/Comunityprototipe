@@ -100,7 +100,7 @@ function Card({ image, title, description, members, posts, avatars }: any) {
       />
       {/* Increased overlay opacity from 50% to 80% for better contrast */}
       <div className="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors duration-300" />
-      <div className="absolute inset-0 p-[16px] flex flex-col">
+      <div className="absolute inset-0 p-5 flex flex-col">
         <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full mb-auto">
           <p className="css-ew64yg font-['Monument_Grotesk:Regular',sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[0.1px]">
             <span className="leading-[20px] text-[#cfd9de]">#</span>
@@ -203,7 +203,7 @@ export default function CarroucelDeCanalesSugeridos() {
               <div 
                 ref={scrollRef}
                 onScroll={checkScroll}
-                className="content-stretch flex gap-[16px] items-start overflow-x-auto no-scrollbar relative w-full h-[184px]" 
+                className="content-stretch flex gap-[16px] items-start overflow-x-auto no-scrollbar relative w-full h-[184px] pr-10" 
                 style={{ scrollSnapType: "x mandatory" }}
               >
                 <div style={{ scrollSnapAlign: "start" }}>

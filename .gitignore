@@ -30,3 +30,6 @@ Thumbs.db
 .cache/
 .eslintcache
 .vite/
+
+# Local UI capture output (optional)
+screenshots/

@@ -15,7 +15,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-start justify-center pt-[100px] px-[10vw] bg-black/60 backdrop-blur-sm overflow-y-auto pb-20"
+          className="fixed inset-0 z-[100] flex items-start justify-center pt-[100px] px-5 sm:px-8 lg:px-12 bg-black/55 backdrop-blur-md overflow-y-auto pb-20"
           onClick={onClose}
         >
           <motion.div
@@ -23,7 +23,7 @@ export default function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="w-full max-w-[1280px] bg-[#182831] rounded-[16px] border border-[#243f4c] shadow-2xl relative overflow-hidden"
+            className="w-full max-w-[1280px] bg-[#182831] rounded-2xl border border-white/[0.08] shadow-2xl relative overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}

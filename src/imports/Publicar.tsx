@@ -50,7 +50,7 @@ function PhotoLarge() {
 function MediaUploadPlaceholder({ onClick }: { onClick: () => void }) {
   return (
     <div 
-      className="bg-[#1c303b] h-[144px] relative rounded-[8px] shrink-0 w-full group cursor-pointer hover:bg-[#213744] transition-colors" 
+      className="bg-[#1a2e38]/90 h-[144px] relative rounded-xl shrink-0 w-full group cursor-pointer transition-all hover:bg-[#213744] hover:ring-1 hover:ring-[#579dff]/25" 
       data-name="Content Container"
       onClick={(e) => {
         e.stopPropagation();
@@ -67,7 +67,7 @@ function MediaUploadPlaceholder({ onClick }: { onClick: () => void }) {
           <span className="decoration-solid underline group-hover:text-white">explora en tu ordenador</span>
         </p>
       </div>
-      <div aria-hidden="true" className="absolute border border-[#243f4c] border-solid inset-0 pointer-events-none rounded-[8px]" />
+      <div aria-hidden="true" className="absolute border border-white/[0.08] border-solid inset-0 pointer-events-none rounded-xl" />
     </div>
   );
 }
@@ -166,7 +166,7 @@ export default function Publicar() {
     <>
       <div 
         ref={containerRef}
-        className={`bg-[#243f4c] content-stretch flex flex-col gap-[16px] py-[16px] relative rounded-[16px] w-full border border-[#2a5266] transition-all duration-500 ease-[0.4, 0, 0.2, 1] ${isActive ? 'min-h-[300px]' : 'h-auto cursor-pointer hover:bg-[#2a4855]'}`} 
+        className={`bg-[#243f4c]/95 content-stretch flex flex-col gap-[16px] py-[16px] relative rounded-2xl w-full border border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.25)] transition-all duration-500 ease-[0.4, 0, 0.2, 1] ${isActive ? 'min-h-[300px]' : 'h-auto cursor-pointer hover:bg-[#2a4855] hover:border-white/[0.12]'}`} 
         data-name="Publicar"
         onClick={() => !isActive && setIsActive(true)}
       >

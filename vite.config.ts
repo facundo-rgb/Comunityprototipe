@@ -1,7 +1,24 @@
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+
+/** Figma Make asset URLs → local placeholder (repo has no bundled Figma assets). */
+function figmaAssetPlaceholderPlugin(): Plugin {
+  const prefix = '\0figma-asset:'
+  const placeholder = '/placeholders/photo.svg'
+  return {
+    name: 'figma-asset-placeholder',
+    resolveId(id) {
+      if (id.startsWith('figma:asset/')) return prefix + id
+    },
+    load(id) {
+      if (id.startsWith(prefix)) {
+        return `export default ${JSON.stringify(placeholder)}`
+      }
+    },
+  }
+}
 
 export default defineConfig({
   plugins: [
@@ -9,6 +26,7 @@ export default defineConfig({
     // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
+    figmaAssetPlaceholderPlugin(),
   ],
   resolve: {
     alias: {
